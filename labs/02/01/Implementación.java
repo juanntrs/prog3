@@ -39,11 +39,15 @@ class Implementación {   // se recomienda guardarlo en un archivo .java separad
   }
   
   public static void prodMatEscalar(int rows, int cols) {
-      
+      double mat1[][] = Captura.readMat(rows, cols, "\nMATRIZ\n");
+      double es = Captura.nextDouble("\nESCALAR: ");
+      Salida.printMat(Operacion.escalar(mat1, es), "\nMATRIZ RESULTANTE\n");
   }
 
   public static void transpMatr(int rows, int cols) {
-      
+      double mat1[][] = Captura.readMat(rows, cols, "\nMATRIZ\n");
+      Salida.printMat(mat1, "\nMATRIZ DIGITADA\n");
+      Salida.printMat(Operacion.transpuesta(mat1), "\nMATRIZ TRANSPUESTA\n");
   }
     /*
        Montar aquí un menú repetitivo que maneje cada una de las opciones referidas.

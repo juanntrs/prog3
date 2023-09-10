@@ -26,6 +26,30 @@ class Operacion {   // se recomienda guardarlo en un archivo .java separado
     return matR;
   }
 
+  public static double[][] escalar(double [][]matA, double B) {
+    double[][] matR = new double[matA.length][matA[0].length];
+    
+    for (int i = 0; i < matR.length; i++) {
+            for (int j = 0; j < matR[0].length; j++) {
+                    matR[i][j] += matA[i][j] * B;
+                }
+            }
+    
+    return matR;
+  }
+  
+  public static double[][] transpuesta(double [][]matA) {
+    double[][] matR = new double[matA.length][matA[0].length];
+    
+    for (int i = 0; i < matA.length; i++) {
+            for (int j = 0; j < matA[0].length; j++) {
+                    matR[j][i] = matA[i][j];
+                }
+            }
+    
+    return matR;
+  }
+  
   // ... continuar con los demás métodos
         }
 

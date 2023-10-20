@@ -1,9 +1,9 @@
-
 package animation;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Color;
 import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,7 +38,7 @@ public class Animacion extends JFrame implements Runnable{
        Graphics2D g2D;
        g2D= (Graphics2D)g;
        int mx=(incremento%9)*80;
-       g2D.drawImage(img,200,200,200+80,200+140,mx,0,mx+80,140, null,this);
+       g2D.drawImage(img,200,200,200+80,200+140,mx,0,mx+80,140, Color.orange,this);
        repaint();
     }
 

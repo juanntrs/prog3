@@ -50,15 +50,41 @@ public class proceso implements Runnable {
              
              
              if(contador>23 && contador<=48){
-                temp2++;
-                texto.setText(" "+temp2);
+                temp3++;
+                texto.setText(" "+temp3);
             }
              if(contador==23){
                 rojo.setBackground(Color.black);
                 amarillo.setBackground(Color.black);
                 verde.setBackground(Color.green);
             }
+            
+             
+            if(contador>48 && contador<=51){
+                temp4++;
+                texto.setText(" "+temp4);
+            }
+             if(contador==48){
+                rojo.setBackground(Color.black);
+                amarillo.setBackground(Color.yellow);
+                verde.setBackground(Color.black);
+            }
+            if(contador==52){
+                contador=0;
+                temp1=0;
+                temp2=0;
+                temp3=0;
+                temp4=0;
+            }
+            try{
+                sleep(1000);
+            }catch (Exception e){}
         }
+    }
+    
+    public void start(){
+        iterar=true;
+        new Thread(this).start();
     }
     
 }

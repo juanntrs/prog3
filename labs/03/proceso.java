@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package animation;
 
 import static java.lang.Thread.sleep;
@@ -78,7 +74,7 @@ public class proceso implements Runnable {
             }
             try{
                 sleep(1000);
-            }catch (Exception e){}
+            }catch (InterruptedException e){}
         }
     }
     

@@ -30,6 +30,9 @@ public class InterfazC extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Tipo = new javax.swing.ButtonGroup();
+        Orden = new javax.swing.ButtonGroup();
+        Datos = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         txtColor = new javax.swing.JTextField();
         txtKm = new javax.swing.JTextField();
@@ -39,7 +42,6 @@ public class InterfazC extends javax.swing.JFrame {
         txtMarca = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtCarros = new javax.swing.JTextField();
         txtModelo = new javax.swing.JTextField();
@@ -47,10 +49,18 @@ public class InterfazC extends javax.swing.JFrame {
         btnAdelante = new javax.swing.JButton();
         pag = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtMerge = new javax.swing.JTextField();
-        txtBurbuja = new javax.swing.JTextField();
+        txt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        btnGuardar1 = new javax.swing.JButton();
+        Merge = new javax.swing.JRadioButton();
+        Bubble = new javax.swing.JRadioButton();
+        Mayor = new javax.swing.JRadioButton();
+        Menor = new javax.swing.JRadioButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        Modelo = new javax.swing.JRadioButton();
+        Kilometraje = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,7 +92,7 @@ public class InterfazC extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
-        jLabel1.setText("Autos a registrar:");
+        jLabel1.setText("Autos a registrar max:");
 
         txtMarca.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
@@ -96,9 +106,6 @@ public class InterfazC extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel3.setText("Modelo:");
-
-        jLabel4.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
-        jLabel4.setText("Merge:");
 
         jLabel5.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel5.setText("Kilometraje:");
@@ -149,84 +156,132 @@ public class InterfazC extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel7.setText("Pág:");
 
-        txtMerge.setEditable(false);
-        txtMerge.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        txtMerge.addActionListener(new java.awt.event.ActionListener() {
+        txt.setEditable(false);
+        txt.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMergeActionPerformed(evt);
-            }
-        });
-
-        txtBurbuja.setEditable(false);
-        txtBurbuja.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        txtBurbuja.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBurbujaActionPerformed(evt);
+                txtActionPerformed(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
         jLabel8.setText("Color:");
 
-        jLabel9.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
-        jLabel9.setText("Bubble:");
+        btnGuardar1.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
+        btnGuardar1.setText("Ordenar ");
+        btnGuardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardar1ActionPerformed(evt);
+            }
+        });
+
+        Tipo.add(Merge);
+        Merge.setText("Merge");
+
+        Tipo.add(Bubble);
+        Bubble.setText("Bubble");
+
+        Orden.add(Mayor);
+        Mayor.setText("Mayor a menor");
+
+        Orden.add(Menor);
+        Menor.setText("Menor a mayor");
+
+        jLabel10.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
+        jLabel10.setText("Tipo de orden:");
+
+        jLabel11.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
+        jLabel11.setText("Ordenamiento:");
+
+        jLabel12.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
+        jLabel12.setText("Datos a ordenar:");
+
+        Datos.add(Modelo);
+        Modelo.setText("Modelo");
+
+        Datos.add(Kilometraje);
+        Kilometraje.setText("Kilometraje");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(73, 73, 73)
-                                .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                                .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtKm, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(108, 108, 108)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pag, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAdelante, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(312, 312, 312))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtMerge, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(btnGuardar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(366, 366, 366))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel10)
+                                            .addComponent(jLabel11))
+                                        .addGap(35, 35, 35)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(Mayor)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(Menor))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(Merge)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(Bubble))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Modelo)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Kilometraje)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 1, Short.MAX_VALUE)
+                                        .addComponent(jLabel2)
+                                        .addGap(73, 73, 73)
+                                        .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtKm, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(108, 108, 108)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7))
+                                .addGap(18, 18, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(pag, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAdelante, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,23 +322,30 @@ public class InterfazC extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(pag, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Merge)
+                            .addComponent(Bubble)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Menor)
+                            .addComponent(Mayor)
+                            .addComponent(jLabel11))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtMerge, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(26, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel9)
-                                .addGap(97, 97, 97))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(Modelo)
+                            .addComponent(Kilometraje))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(102, 102, 102))))
+                        .addComponent(btnGuardar1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -377,36 +439,79 @@ public class InterfazC extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void txtMergeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMergeActionPerformed
+    private void txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMergeActionPerformed
+    }//GEN-LAST:event_txtActionPerformed
 
-    private void txtBurbujaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBurbujaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBurbujaActionPerformed
+    private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
+        txt.setText("");
+        
+        if(Merge.isSelected() && Mayor.isSelected() && Modelo.isSelected()){
+                txt.setText("Merge, mayor, modelo");
+        }
+        else if(Merge.isSelected() && Mayor.isSelected() && Kilometraje.isSelected()){
+                txt.setText("Merge, mayor, kilometraje");
+        }
+        else if(Merge.isSelected() && Menor.isSelected() && Kilometraje.isSelected()){
+                txt.setText("Merge, menor, Kilometraje");
+        }
+        else if(Merge.isSelected() && Menor.isSelected() && Modelo.isSelected()){
+                txt.setText("Merge, menor, modelo");
+        }
+        else if(Bubble.isSelected() && Menor.isSelected() && Modelo.isSelected()){
+                txt.setText("Bubble, menor, modelo");
+        }
+        
+        else if(Bubble.isSelected() && Mayor.isSelected() && Modelo.isSelected()){
+                txt.setText("Bubble, mayor, modelo");
+        }
+        
+        else if(Bubble.isSelected() && Mayor.isSelected() && Kilometraje.isSelected()){
+                txt.setText("Bubble, mayor, kilometraje");
+        }
+        else if(Bubble.isSelected() && Menor.isSelected() && Kilometraje.isSelected()){
+                txt.setText("Bubble, menor, kilometraje");
+        }
+        else if(Bubble.isSelected() && Mayor.isSelected() && Modelo.isSelected()){
+                txt.setText("Bubble, mayor, modelo");
+        }
+        else {
+            txt.setText("Nada");
+        }
+    }//GEN-LAST:event_btnGuardar1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton Bubble;
+    private javax.swing.ButtonGroup Datos;
+    private javax.swing.JRadioButton Kilometraje;
+    private javax.swing.JRadioButton Mayor;
+    private javax.swing.JRadioButton Menor;
+    private javax.swing.JRadioButton Merge;
+    private javax.swing.JRadioButton Modelo;
+    private javax.swing.ButtonGroup Orden;
+    private javax.swing.ButtonGroup Tipo;
     private javax.swing.JButton btnAdelante;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField pag;
-    private javax.swing.JTextField txtBurbuja;
+    private javax.swing.JTextField txt;
     private javax.swing.JTextField txtCarros;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtKm;
     private javax.swing.JTextField txtMarca;
-    private javax.swing.JTextField txtMerge;
     private javax.swing.JTextField txtModelo;
     // End of variables declaration//GEN-END:variables
 }

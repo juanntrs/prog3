@@ -16,11 +16,36 @@ public class Entrada {
         try (Scanner scanner = new Scanner(new File("muertes.csv"))) {
             while (scanner.hasNextLine()) {
                 String[] datosVen = scanner.nextLine().split(",");
-                Venezolanos temp = new Venezolanos(datosVen[2], datosVen[7], Integer.parseInt(datosVen[8]));
+                Venezolanos temp = new Venezolanos( Integer.parseInt(datosVen[5]), Integer.parseInt(datosVen[4]), Integer.parseInt(datosVen[0]), Integer.parseInt(datosVen[7]));
                 venezolanos.add(temp);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Error al leer el archivo de municipios: " + e.getMessage());
+            System.out.println("Error al leer el archivo de inmigrantes: " + e.getMessage());
         }
     }
+    
+    public int[] venePorGenero(){
+        int venePorGenero[]=new int [2];
+        int i=0;
+        while (i<venezolanos.size()){
+            Venezolanos temp = venezolanos.get(i);
+            
+            temp.masculino += temp.masculino;
+            temp.femenino += temp.femenino;
+        }
+        return venePorGenero();
+    }
+    
+    public int[]venePorAnio(){
+        int veneAnio[] = new int [8];
+        int i=0;
+        while(i<venezolanos.size()){
+            Venezolanos temp = venezolanos.get(i);
+            
+            switch (temp,anio){
+                case "2012": veneAnio[0] += ();
+            }
+        }
+    }
+    
 }

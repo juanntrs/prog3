@@ -1,10 +1,53 @@
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 public class Piques extends javax.swing.JFrame {
 
     /**
      * Creates new form Piques
      */
-    public Piques() {
+    
+    CarreritaAutos hilo1, hilo2, hilo3, hilo4, hilo5;
+    static boolean carreraFinalizada = false;
+    public static BufferedImage background;
+    
+    public Piques() throws IOException {
         initComponents();
+        try{
+            background = ImageIO.read(new File("resource/back.png"));
+        } catch (IOException e){
+            System.out.println(e);
+        }
+    }
+    
+    public JLabel getlbl1(){
+        return car1;
+    }
+    
+    public JLabel getlbl2() {
+        return car2;
+    }
+
+    public JLabel getlbl3() {
+        return car3;
+    }
+
+    public JLabel getMeta() {
+        return meta;
+    }
+    
+    static void carreraFinalizada (String ganador){
+        if(!carreraFinalizada){
+            carreraFinalizada = true;
+            JOptionPane.showMessageDialog(null, "Ganó " + ganador);
+        }
     }
 
     /**
@@ -16,26 +59,145 @@ public class Piques extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        car1 = new javax.swing.JLabel();
+        car2 = new javax.swing.JLabel();
+        car3 = new javax.swing.JLabel();
+        car4 = new javax.swing.JLabel();
+        car5 = new javax.swing.JLabel();
+        meta = new javax.swing.JLabel();
+        Iniciar = new javax.swing.JButton();
+        Detener = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(62, 62, 62));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 250));
+
+        car1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car1.png"))); // NOI18N
+
+        car2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car2.png"))); // NOI18N
+
+        car3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car3.png"))); // NOI18N
+
+        car4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car4.png"))); // NOI18N
+
+        car5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/car6.png"))); // NOI18N
+
+        meta.setBackground(new java.awt.Color(255, 153, 153));
+        meta.setForeground(new java.awt.Color(204, 255, 204));
+        meta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0), 20));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(car5)
+                    .addComponent(car4)
+                    .addComponent(car3)
+                    .addComponent(car1)
+                    .addComponent(car2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 356, Short.MAX_VALUE)
+                .addComponent(meta, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(car1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(car2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(car3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(car4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(car5)
+                .addContainerGap(23, Short.MAX_VALUE))
+            .addComponent(meta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        Iniciar.setText("Iniciar");
+        Iniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IniciarActionPerformed(evt);
+            }
+        });
+
+        Detener.setText("Detener");
+        Detener.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DetenerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Detener, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Iniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 150, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(Iniciar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Detener)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void IniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarActionPerformed
+        
+        car1.setLocation(0, car1.getLocation().y);
+        car2.setLocation(0, car2.getLocation().y);
+        car3.setLocation(0, car3.getLocation().y);
+        car4.setLocation(0, car4.getLocation().y);
+        car5.setLocation(0, car5.getLocation().y);
+        
+        hilo1 = new CarreritaAutos(car1, this, "Carro 1");
+        hilo2 = new CarreritaAutos(car2, this, "Carro 2");
+        hilo3 = new CarreritaAutos(car3, this, "Carro 3");
+        hilo4 = new CarreritaAutos(car4, this, "Carro 4");
+        hilo5 = new CarreritaAutos(car5, this, "Carro 5");
+        
+        carreraFinalizada = false;
+        
+        hilo1.start();
+        hilo2.start();
+        hilo3.start();
+        hilo4.start();
+        hilo5.start();
+        
+    }//GEN-LAST:event_IniciarActionPerformed
+
+    private void DetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetenerActionPerformed
+//        hilo1.stop();
+//        hilo2.stop();
+//        hilo3.stop();
+//        hilo4.stop();
+//        hilo5.stop();
+    }//GEN-LAST:event_DetenerActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args){
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -62,11 +224,24 @@ public class Piques extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Piques().setVisible(true);
+                try {
+                    new Piques().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Piques.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Detener;
+    private javax.swing.JButton Iniciar;
+    private javax.swing.JLabel car1;
+    private javax.swing.JLabel car2;
+    private javax.swing.JLabel car3;
+    private javax.swing.JLabel car4;
+    private javax.swing.JLabel car5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel meta;
     // End of variables declaration//GEN-END:variables
 }

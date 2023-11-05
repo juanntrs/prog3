@@ -4,9 +4,9 @@ import javax.swing.JLabel;
 
 public class CarreritaAutos extends Thread {
     
-    private JLabel carro;
+    private final JLabel carro;
     private Piques window;
-    private String nombreCarro;
+    private final String nombreCarro;
     
     public CarreritaAutos (JLabel carro, Piques Window, String Nombre){
         this.carro = carro;
@@ -23,6 +23,16 @@ public class CarreritaAutos extends Thread {
                 sleep((int) (Math.random()*1000));
             } catch (InterruptedException ex){
                 Logger.getLogger(CarreritaAutos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+            if (carro.getLocation().x < window.getMeta().getLocation().x) {
+                carro.setLocation(carro.getLocation().x, carro.getLocation().y);
+                window.repaint();
+            } else {
+                System.out.println(nombreCarro);
+                Piques.carreraFinalizada(nombreCarro);
+                break;
             }
         }
     }
